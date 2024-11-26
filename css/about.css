@@ -1,0 +1,89 @@
+/* about.css */
+
+/* General Body Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9fafb; /* Light gray */
+    color: #333; /* Dark gray for text */
+    line-height: 1.8;
+}
+
+/* Header Styling */
+header {
+    background-color: #ffffff; /* White background */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 1.75rem; /* Slightly larger title */
+    color: #2d3748; /* Darker shade of gray */
+}
+
+header ul li a {
+    font-weight: 500; /* Semi-bold links */
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+header ul li a:hover {
+    color: #1a202c; /* Dark gray on hover */
+}
+
+/* Section Titles */
+section h2 {
+    color: #2c5282; /* Blue shade for section titles */
+    border-bottom: 2px solid #e2e8f0; /* Light border below title */
+    padding-bottom: 0.25rem;
+    margin-bottom: 1rem;
+}
+
+/* Paragraph Styling */
+section p {
+    margin-bottom: 1rem;
+    text-align: justify; /* Justified text for cleaner alignment */
+}
+
+/* List Styling */
+section ul {
+    margin-top: 1rem;
+    margin-left: 1.5rem;
+    color: #2d3748; /* Slightly darker text color */
+}
+
+section ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #f7fafc; /* Light gray */
+    color: #718096; /* Muted gray text */
+    border-top: 1px solid #e2e8f0; /* Subtle border */
+}
+
+footer p {
+    font-size: 0.875rem; /* Slightly smaller text */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    header ul li {
+        margin-bottom: 0.5rem;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+    }
+
+    footer p {
+        font-size: 0.75rem;
+    }
+}
