@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Join the team at Homeboy Coffee Shop and become part of an exciting, dynamic workplace.">
+    <meta name="description" content="Join the Homeboy Coffee Shop team and start your career with us.">
     <title>Careers - Homeboy Coffee Shop</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/careers.css">
@@ -15,43 +15,42 @@
 
     <!-- Main Content -->
     <main class="container mx-auto px-6 py-12">
-        <h1 class="text-4xl font-bold text-center mb-8">Careers</h1>
-        <p class="text-lg text-center text-gray-600 mb-12">
-            Join the team at Homeboy Coffee Shop and help us create unforgettable experiences for our customers.
-        </p>
-
+        <h1 class="text-4xl font-bold text-center mb-8">Join Our Team</h1>
+        <p class="text-center text-gray-700 mb-12">We're always looking for passionate and friendly individuals to join the Homeboy family. Check out our open positions below!</p>
+        
         <!-- Job Listings -->
-        <section id="job-listings" class="mb-12">
-            <h2 class="text-2xl font-semibold mb-6">Open Positions</h2>
-            <div id="jobs-container" class="grid grid-cols-1 md:grid-cols-2 gap-8"></div>
+        <section id="job-listings" class="space-y-8">
+            <!-- Dynamic job cards will be populated here -->
         </section>
+    </main>
 
-        <!-- Application Form -->
-        <section id="application-form" class="py-12 bg-white rounded-lg shadow-md">
-            <h2 class="text-2xl font-semibold mb-6">Apply Now</h2>
-            <form id="career-form" class="space-y-6">
+    <!-- Application Form -->
+    <section class="bg-gray-50 py-12">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-semibold text-center mb-6">Apply Now</h2>
+            <form id="application-form" class="space-y-6 max-w-2xl mx-auto">
                 <div>
-                    <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
-                    <input type="text" id="name" name="name" required class="w-full px-4 py-2 border rounded-lg">
+                    <label for="name" class="block font-semibold text-gray-700">Full Name</label>
+                    <input type="text" id="name" class="w-full p-3 border rounded" placeholder="Your full name" required>
                 </div>
                 <div>
-                    <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
-                    <input type="email" id="email" name="email" required class="w-full px-4 py-2 border rounded-lg">
+                    <label for="email" class="block font-semibold text-gray-700">Email Address</label>
+                    <input type="email" id="email" class="w-full p-3 border rounded" placeholder="Your email" required>
                 </div>
                 <div>
-                    <label for="position" class="block text-gray-700 font-medium mb-2">Position Applying For</label>
-                    <select id="position" name="position" required class="w-full px-4 py-2 border rounded-lg">
-                        <option value="">Select a position</option>
+                    <label for="position" class="block font-semibold text-gray-700">Position</label>
+                    <select id="position" class="w-full p-3 border rounded">
+                        <!-- Populated dynamically -->
                     </select>
                 </div>
                 <div>
-                    <label for="resume" class="block text-gray-700 font-medium mb-2">Upload Resume</label>
-                    <input type="file" id="resume" name="resume" required class="w-full px-4 py-2 border rounded-lg">
+                    <label for="message" class="block font-semibold text-gray-700">Why Should We Hire You?</label>
+                    <textarea id="message" class="w-full p-3 border rounded" rows="5" placeholder="Tell us why you'd be a great fit" required></textarea>
                 </div>
-                <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600">Submit Application</button>
+                <button type="submit" class="bg-blue-500 text-white py-3 px-6 rounded hover:bg-blue-600">Submit Application</button>
             </form>
-        </section>
-    </main>
+        </div>
+    </section>
 
     <!-- Dynamic Footer -->
     <div id="footer"></div>
@@ -62,16 +61,12 @@
         // Load Header
         fetch('header.html')
             .then(response => response.text())
-            .then(data => {
-                document.getElementById('header').innerHTML = data;
-            });
+            .then(data => document.getElementById('header').innerHTML = data);
 
         // Load Footer
         fetch('footer.html')
             .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer').innerHTML = data;
-            });
+            .then(data => document.getElementById('footer').innerHTML = data);
     </script>
 </body>
 </html>
