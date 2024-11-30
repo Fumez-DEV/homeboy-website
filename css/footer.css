@@ -32,9 +32,15 @@ footer img {
     border-radius: 5px; /* Rounded corners */
 }
 
-.social-media-icon:hover {
-    transform: scale(1.1);
+/* Social Media Icons */
+.social-media-icon {
+    width: 1.5rem;
+    height: 1.5rem;
     transition: transform 0.3s ease-in-out;
+}
+
+.social-media-icon:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
 }
 
 /* Responsive Footer */
@@ -43,11 +49,19 @@ footer img {
         padding: 1rem 0; /* Reduce padding on smaller screens */
     }
 
+    footer ul {
+        flex-wrap: wrap; /* Allow wrapping of navigation links */
+    }
+
+    footer ul li {
+        margin-bottom: 0.5rem; /* Add spacing for stacked links */
+    }
+
     footer p {
         font-size: 0.75rem; /* Smaller font for mobile */
     }
     
     footer img {
-        width: 100%; /* Adjust image size for smaller screens */
+        width: 80%; /* Adjust image size for smaller screens */
     }
 }
