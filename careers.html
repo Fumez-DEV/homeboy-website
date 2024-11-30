@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join the team at Homeboy Coffee Shop and become part of an exciting, dynamic workplace.">
+    <title>Careers - Homeboy Coffee Shop</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/careers.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Dynamic Header -->
+    <div id="header"></div>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12">
+        <h1 class="text-4xl font-bold text-center mb-8">Careers</h1>
+        <p class="text-lg text-center text-gray-600 mb-12">
+            Join the team at Homeboy Coffee Shop and help us create unforgettable experiences for our customers.
+        </p>
+
+        <!-- Job Listings -->
+        <section id="job-listings" class="mb-12">
+            <h2 class="text-2xl font-semibold mb-6">Open Positions</h2>
+            <div id="jobs-container" class="grid grid-cols-1 md:grid-cols-2 gap-8"></div>
+        </section>
+
+        <!-- Application Form -->
+        <section id="application-form" class="py-12 bg-white rounded-lg shadow-md">
+            <h2 class="text-2xl font-semibold mb-6">Apply Now</h2>
+            <form id="career-form" class="space-y-6">
+                <div>
+                    <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+                    <input type="text" id="name" name="name" required class="w-full px-4 py-2 border rounded-lg">
+                </div>
+                <div>
+                    <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                    <input type="email" id="email" name="email" required class="w-full px-4 py-2 border rounded-lg">
+                </div>
+                <div>
+                    <label for="position" class="block text-gray-700 font-medium mb-2">Position Applying For</label>
+                    <select id="position" name="position" required class="w-full px-4 py-2 border rounded-lg">
+                        <option value="">Select a position</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="resume" class="block text-gray-700 font-medium mb-2">Upload Resume</label>
+                    <input type="file" id="resume" name="resume" required class="w-full px-4 py-2 border rounded-lg">
+                </div>
+                <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600">Submit Application</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Dynamic Footer -->
+    <div id="footer"></div>
+
+    <!-- JavaScript -->
+    <script src="js/careers.js"></script>
+    <script>
+        // Load Header
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            });
+
+        // Load Footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+    </script>
+</body>
+</html>
