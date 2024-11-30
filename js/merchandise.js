@@ -156,34 +156,34 @@ const merchandise = {
 };
 
 
-// Function to render products for a category
+// Render products for a category
 function renderProducts(category, elementId) {
     const container = document.querySelector(`#${elementId} .product-grid`);
     merchandise[category].forEach(product => {
         const productCard = document.createElement("div");
         productCard.className = "product-card";
         if (product.availability === "Sold Out") {
-            productCard.classList.add("sold-out");
+            productCard.classList.add("opacity-50", "pointer-events-none");
         }
         productCard.innerHTML = `
             <div class="product-image-wrapper">
                 <img src="${product.images[0]}" alt="${product.name}" 
-                    onmouseover="this.src='${product.images[1]}'" 
+                    onmouseover="this.src='${product.images[1] || product.images[0]}'" 
                     onmouseout="this.src='${product.images[0]}'">
             </div>
             <div class="product-info">
                 <h3 class="product-title">${product.name}</h3>
                 <p class="product-price">${product.price}</p>
                 <button class="product-button" ${product.availability === "Sold Out" ? "disabled" : ""}>
-                    ${product.availability === "Sold Out" ? "Unavailable" : "Add to Cart"}
+                    ${product.availability === "Sold Out" ? "Unavailable" : "View Details"}
                 </button>
             </div>
         `;
-        productCard.addEventListener("click", () => {
-            if (product.availability !== "Sold Out") {
+        if (product.availability !== "Sold Out") {
+            productCard.addEventListener("click", () => {
                 redirectToProductPage(product);
-            }
-        });
+            });
+        }
         container.appendChild(productCard);
     });
 }
@@ -200,11 +200,10 @@ function renderGrindList(grinds) {
 
 // Function to redirect to product page with product details
 function redirectToProductPage(product) {
-    const url = new URL("product-page", window.location.origin);
-    url.searchParams.append("id", product.id);
+    const url = new URL("product-page.html", window.location.origin); // Ensure ".html" extension
     url.searchParams.append("name", product.name);
     url.searchParams.append("price", product.price);
-    url.searchParams.append("description", product.description);
+    url.searchParams.append("description", product.description.trim()); // Trim whitespace
     product.images.forEach((image, index) => {
         url.searchParams.append(`image${index}`, image);
     });
@@ -213,7 +212,7 @@ function redirectToProductPage(product) {
             url.searchParams.append(`grind${index}`, grind);
         });
     }
-    window.location.href = url;
+    window.location.href = url.href; // Redirect to product page
 }
 
 // Render products for all categories

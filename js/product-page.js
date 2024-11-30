@@ -9,13 +9,13 @@ function addToCart(product) {
 // Function to fetch and populate product details
 document.addEventListener("DOMContentLoaded", () => {
     // Fetch Header and Footer
-    fetch("header")
+    fetch("header.html")
         .then(response => response.text())
         .then(data => {
             document.getElementById("header").innerHTML = data;
         });
 
-    fetch("footer")
+    fetch("footer.html")
         .then(response => response.text())
         .then(data => {
             document.getElementById("footer").innerHTML = data;
@@ -23,9 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Get product details from URL parameters
     const urlParams = new URLSearchParams(window.location.search);
-    const productName = urlParams.get("name");
-    const productPrice = urlParams.get("price");
-    const productDescription = urlParams.get("description");
+    const productName = urlParams.get("name") || "Product Name"; // Fallback to "Product Name"
+    const productPrice = urlParams.get("price") || "$0.00"; // Fallback to "$0.00"
+    const productDescription = urlParams.get("description") || "Description unavailable."; // Fallback description
 
     const productImages = [];
     const grindOptions = [];
@@ -41,14 +41,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Populate product details in the DOM
-    document.getElementById("product-title").innerText = productName || "Product Name";
-    document.getElementById("product-price").innerText = productPrice || "$0.00";
-    document.getElementById("product-description").innerText =
-        productDescription || "Product description goes here.";
+    document.getElementById("product-title").innerText = productName;
+    document.getElementById("product-price").innerText = productPrice;
+    document.getElementById("product-description").innerText = productDescription;
 
     const mainImage = document.getElementById("main-image");
     if (productImages.length > 0) {
         mainImage.src = productImages[0];
+    } else {
+        mainImage.alt = "No image available";
     }
 
     const thumbnailGrid = document.getElementById("thumbnail-grid");
@@ -76,18 +77,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Handle Add to Cart button click
     const addToCartBtn = document.getElementById("add-to-cart-btn");
-    addToCartBtn.addEventListener("click", () => {
-        const selectedGrind = document.getElementById("grind-select").value || "None";
+    if (addToCartBtn) {
+        addToCartBtn.addEventListener("click", () => {
+            const selectedGrind = document.getElementById("grind-select")
+                ? document.getElementById("grind-select").value || "None"
+                : "None";
 
-        // Create product object
-        const product = {
-            name: productName || "Product Name",
-            price: productPrice || "$0.00",
-            grind: selectedGrind,
-            image: productImages[0] || ""
-        };
+            // Create product object
+            const product = {
+                name: productName,
+                price: productPrice,
+                grind: selectedGrind,
+                image: productImages[0] || "",
+            };
 
-        // Add product to cart
-        addToCart(product);
-    });
+            // Add product to cart
+            addToCart(product);
+        });
+    }
 });
