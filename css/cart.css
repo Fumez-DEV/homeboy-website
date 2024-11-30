@@ -1,0 +1,159 @@
+/* General Styling */
+body {
+    background-color: #f9fafb; /* Light background for better readability */
+    font-family: 'Inter', sans-serif; /* Modern and clean font */
+    color: #2d3748; /* Neutral dark text */
+}
+
+/* Main Content */
+main {
+    max-width: 800px;
+    margin: auto;
+    padding: 1.5rem;
+}
+
+/* Page Title */
+h1 {
+    font-size: 2.5rem;
+    color: #1a202c; /* Bold text color */
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Cart Items Container */
+#cart-items {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Individual Cart Item */
+#cart-items .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+#cart-items .cart-item:last-child {
+    border-bottom: none;
+}
+
+#cart-items .cart-item img {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-right: 1rem;
+}
+
+#cart-items .cart-item-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#cart-items .cart-item-info .item-name {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #1a202c;
+}
+
+#cart-items .cart-item-info .item-details {
+    font-size: 0.875rem;
+    color: #718096;
+}
+
+/* Price and Remove Button */
+#cart-items .cart-item .item-price {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #2d3748;
+    margin-right: 1rem;
+}
+
+#cart-items .cart-item .remove-btn {
+    font-size: 0.875rem;
+    color: #e53e3e;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+#cart-items .cart-item .remove-btn:hover {
+    color: #c53030;
+}
+
+/* Order Summary */
+#cart-summary {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#cart-summary h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1a202c;
+    margin-bottom: 1rem;
+}
+
+#cart-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.125rem;
+    color: #2d3748;
+    margin-top: 1rem;
+}
+
+/* Checkout Button */
+#checkout-btn {
+    background-color: #3182ce; /* Blue color for call-to-action */
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#checkout-btn:hover {
+    background-color: #2b6cb0;
+    transform: translateY(-2px);
+}
+
+/* Empty Cart Message */
+#cart-items p {
+    font-size: 1.125rem;
+    text-align: center;
+    color: #718096;
+    margin: 1.5rem 0;
+}
+#free-shipping-note {
+    color: #16a34a; /* Green color */
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 0.5rem;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    #cart-items .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #cart-items .cart-item img {
+        margin-bottom: 0.5rem;
+    }
+
+    #cart-items .cart-item .item-price {
+        margin: 0.5rem 0;
+    }
+}

@@ -83,7 +83,7 @@ const merchandise = {
                 "images/merchandise/home-blend/1kg/1kg-1.png",
                 "images/merchandise/home-blend/1kg/1kg-2.png"
             ],
-            price: "$20",
+            price: "$50",
             grinds: ["Beans", "Aeropress", "Domestic Espresso", "Commercial Espresso", "Plunger", "Mokka Pot", "V60"],
             description: `
                 Bringing homeboy, home. 
@@ -108,7 +108,7 @@ const merchandise = {
                 "images/merchandise/home-blend/500g/500g-1.png",
                 "images/merchandise/home-blend/500g/500g-2.png"
             ],
-            price: "$15",
+            price: "$31",
             grinds: ["Beans", "Aeropress", "Domestic Espresso", "Commercial Espresso", "Plunger", "Mokka Pot", "V60"],
             description: `
                 Bringing homeboy, home. 
@@ -133,7 +133,7 @@ const merchandise = {
                 "images/merchandise/home-blend/250g/250g-1.png",
                 "images/merchandise/home-blend/250g/250-2.png"
             ],
-            price: "$10",
+            price: "$20",
             grinds: ["Beans", "Aeropress", "Domestic Espresso", "Commercial Espresso", "Plunger", "Mokka Pot", "V60"],
             description: `
                 Bringing homeboy, home. 
@@ -162,38 +162,28 @@ function renderProducts(category, elementId) {
     merchandise[category].forEach(product => {
         const productCard = document.createElement("div");
         productCard.className = "product-card";
-        
-        // Add "sold-out" class if product is unavailable
         if (product.availability === "Sold Out") {
             productCard.classList.add("sold-out");
         }
-
-        // Create product card HTML
         productCard.innerHTML = `
             <div class="product-image-wrapper">
                 <img src="${product.images[0]}" alt="${product.name}" 
                     onmouseover="this.src='${product.images[1]}'" 
                     onmouseout="this.src='${product.images[0]}'">
-                ${product.availability === "Sold Out" ? '<div class="sold-out-overlay">Sold Out</div>' : ""}
             </div>
             <div class="product-info">
                 <h3 class="product-title">${product.name}</h3>
                 <p class="product-price">${product.price}</p>
-                ${product.grinds ? renderGrindList(product.grinds) : ""}
                 <button class="product-button" ${product.availability === "Sold Out" ? "disabled" : ""}>
                     ${product.availability === "Sold Out" ? "Unavailable" : "Add to Cart"}
                 </button>
             </div>
         `;
-
-        // Add click event listener for redirecting to product page
         productCard.addEventListener("click", () => {
             if (product.availability !== "Sold Out") {
                 redirectToProductPage(product);
             }
         });
-
-        // Append the product card to the container
         container.appendChild(productCard);
     });
 }

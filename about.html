@@ -40,34 +40,53 @@
 
 <section class="py-12 bg-gray-50">
     <div class="container mx-auto text-center">
-        <h2 class="text-3xl font-semibold mb-4">Renew Adelaide</h2>
-        <p class="text-gray-600 mb-6">How Homeboy found his spot!</p>
+        <h2 class="text-3xl font-bold mb-4 text-gray-800">Renew Adelaide</h2>
+        <p class="text-gray-600 mb-6 leading-relaxed">Discover how Homeboy found its perfect spot in the heart of the city.</p>
         <div class="video-container mx-auto">
-            <video
-                src="images/tom-finds.mp4"
+            <iframe
+                src="https://drive.google.com/file/d/1CvSV0hv2UdYFWmbfwtX0-riKBc0wIOjJ/preview"
                 class="video-responsive rounded-lg shadow-lg"
-                muted
-                loop
-                playsinline
-            ></video>
+                frameborder="0"
+                allow="autoplay; fullscreen">
+            </iframe>
         </div>
     </div>
 </section>
 
+<!-- CSS -->
+<style>
+    /* Video Container */
+    .video-container {
+        position: relative;
+        width: 100%;
+        max-width: 800px;
+        height: 450px; /* Fixed height for 16:9 ratio */
+        margin: auto;
+        border-radius: 12px;
+        overflow: hidden;
+    }
 
-<script>
-    const video = document.querySelector('.video-container video');
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensures video covers the container */
+    }
 
-    video.addEventListener('mouseenter', () => {
-        video.muted = false;
-        video.play();
-    });
+    .video-container:hover {
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+    }
 
-    video.addEventListener('mouseleave', () => {
-        video.pause();
-        video.muted = true;
-    });
-</script>
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .video-container {
+            height: 200px; /* Smaller height for smaller screens */
+        }
+    }
+</style>
+
 
 
 <!-- Section: Season 1 - Thiele’s Shop -->

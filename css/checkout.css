@@ -1,0 +1,64 @@
+body {
+    background-color: #f9fafb;
+    font-family: 'Inter', sans-serif;
+}
+
+main {
+    max-width: 800px;
+    margin: auto;
+}
+
+h1 {
+    color: #1a202c;
+}
+
+input.input-field {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+    box-sizing: border-box;
+}
+
+input.input-field:focus {
+    border-color: #3490dc;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 144, 220, 0.3);
+}
+
+form {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Payment Methods */
+.payment-methods {
+    margin-top: 1rem;
+}
+
+.payment-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #2d3748;
+}
+
+.payment-option input {
+    accent-color: #3490dc;
+}
+
+.payment-details {
+    padding-left: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.payment-details.hidden {
+    display: none;
+}
+
+
+button:hover {
+    background-color: #2779bd;
+}
