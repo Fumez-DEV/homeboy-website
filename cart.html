@@ -33,7 +33,7 @@
 
         <!-- Checkout Button -->
         <div class="text-center mt-8">
-            <a href="checkout.html" id="checkout-btn" class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600">
+            <a href="checkout" id="checkout-btn" class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600">
                 Proceed to Checkout
             </a>
         </div>
@@ -45,14 +45,14 @@
     <!-- JavaScript -->
     <script>
         // Load Header
-        fetch('header.html')
+        fetch('header')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('header').innerHTML = data;
             });
 
         // Load Footer
-        fetch('footer.html')
+        fetch('footer')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('footer').innerHTML = data;

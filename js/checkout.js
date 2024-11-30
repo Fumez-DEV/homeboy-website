@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Load header and footer dynamically
-    fetch("header.html")
+    fetch("header")
         .then(response => response.text())
         .then(data => {
             document.getElementById("header").innerHTML = data;
         });
 
-    fetch("footer.html")
+    fetch("footer")
         .then(response => response.text())
         .then(data => {
             document.getElementById("footer").innerHTML = data;
@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             alert("Thank you for your order! Payment processed via Credit/Debit Card.");
             localStorage.removeItem("cart");
-            window.location.href = "index.html";
+            window.location.href = "index";
         }
     });
 });

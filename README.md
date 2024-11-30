@@ -33,14 +33,14 @@ C:\homeboy-website
 │   ├── merchandise.js
 │   ├── product-page.js
 │   └── ...
-├── index.html            # Home page of the website
-├── about.html            # About Us page
-├── blog.html             # Blog page
-├── contact.html          # Contact Us page
-├── events.html           # Events page
-├── loyalty.html          # Loyalty page
-├── merchandise.html      # Merchandise page
-├── product-page.html     # Individual product details page
+├── index            # Home page of the website
+├── about            # About Us page
+├── blog             # Blog page
+├── contact          # Contact Us page
+├── events           # Events page
+├── loyalty          # Loyalty page
+├── merchandise      # Merchandise page
+├── product-page     # Individual product details page
 └── README.md             # Project documentation (this file)
 ```
 

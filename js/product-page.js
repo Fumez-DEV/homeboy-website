@@ -9,13 +9,13 @@ function addToCart(product) {
 // Function to fetch and populate product details
 document.addEventListener("DOMContentLoaded", () => {
     // Fetch Header and Footer
-    fetch("header.html")
+    fetch("header")
         .then(response => response.text())
         .then(data => {
             document.getElementById("header").innerHTML = data;
         });
 
-    fetch("footer.html")
+    fetch("footer")
         .then(response => response.text())
         .then(data => {
             document.getElementById("footer").innerHTML = data;

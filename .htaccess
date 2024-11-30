@@ -1,0 +1,9 @@
+# Enable Rewrite Engine
+RewriteEngine On
+
+# Redirect requests without  extension to the corresponding  file
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^(.*)$ $1 [NC,L]
+
+# Redirect from trailing slash (optional)
+RewriteRule ^(.*)/$ $1 [NC,R=301,L]

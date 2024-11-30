@@ -200,7 +200,7 @@ function renderGrindList(grinds) {
 
 // Function to redirect to product page with product details
 function redirectToProductPage(product) {
-    const url = new URL("product-page.html", window.location.origin);
+    const url = new URL("product-page", window.location.origin);
     url.searchParams.append("id", product.id);
     url.searchParams.append("name", product.name);
     url.searchParams.append("price", product.price);

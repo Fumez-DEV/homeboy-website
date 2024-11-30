@@ -21,9 +21,9 @@
                     <h1 class="text-5xl font-bold mb-4">Brewing Happiness in Adelaide</h1>
                     <p class="text-xl mb-6">Serving ethically sourced coffee and local bakery treats.</p>
                     <div class="space-x-4">
-                        <a href="menu.html" class="bg-blue-500 text-white px-6 py-3 rounded shadow hover:bg-blue-700">Explore Our Menu</a>
-                        <a href="contact.html" class="bg-white text-blue-500 px-6 py-3 rounded shadow hover:bg-gray-200">Visit Us Today</a>
-                        <a href="order.html" class="bg-green-500 text-white px-6 py-3 rounded shadow hover:bg-green-700">Order Online</a>
+                        <a href="menu" class="bg-blue-500 text-white px-6 py-3 rounded shadow hover:bg-blue-700">Explore Our Menu</a>
+                        <a href="contact" class="bg-white text-blue-500 px-6 py-3 rounded shadow hover:bg-gray-200">Visit Us Today</a>
+                        <a href="order" class="bg-green-500 text-white px-6 py-3 rounded shadow hover:bg-green-700">Order Online</a>
                     </div>
                 </div>
             </div>
@@ -129,14 +129,14 @@
     <!-- JavaScript for Reusable Header and Footer -->
     <script>
         // Load Header
-        fetch('header.html')
+        fetch('header')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('header').innerHTML = data;
             });
 
         // Load Footer
-        fetch('footer.html')
+        fetch('footer')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('footer').innerHTML = data;

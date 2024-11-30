@@ -43,7 +43,7 @@
     <!-- JavaScript for Dynamic Header and Footer -->
     <script>
         // Load Header
-        fetch('header.html')
+        fetch('header')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('header').innerHTML = data;
@@ -58,7 +58,7 @@
             });
 
         // Load Footer
-        fetch('footer.html')
+        fetch('footer')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('footer').innerHTML = data;
