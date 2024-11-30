@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the product details of Homeboy Coffee Shop merchandise. High-quality products tailored for coffee lovers.">
+    <title>Product Page - Homeboy Coffee Shop</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/product-page.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon"> <!-- Add Favicon -->
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Dynamic Header -->
+    <div id="header"></div>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12">
+        <!-- Product Details -->
+        <div class="product-details flex flex-col md:flex-row">
+            <!-- Product Images -->
+            <div class="product-images flex-1 flex flex-col items-center">
+                <img id="main-image" src="" alt="Product Image" class="rounded-lg shadow-md mb-4">
+                <div class="thumbnail-grid grid grid-cols-4 gap-2" id="thumbnail-grid"></div>
+            </div>
+
+            <!-- Product Info -->
+            <div class="product-info flex-1 p-6">
+                <h1 class="text-3xl font-bold mb-4" id="product-title">Loading...</h1>
+                <p class="text-gray-600 mb-4" id="product-description">Loading description...</p>
+                <p class="text-2xl font-bold text-blue-500 mb-6" id="product-price">Loading price...</p>
+                
+                <!-- Grind Options -->
+                <div id="grind-options" class="mb-4 hidden">
+                    <h2 class="text-xl font-semibold mb-2">Select Grind Option:</h2>
+                    <select id="grind-select" class="border px-4 py-2 rounded-lg w-full">
+                        <option value="">Select...</option>
+                    </select>
+                </div>
+                
+                <button class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600" id="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Dynamic Footer -->
+    <div id="footer"></div>
+
+    <!-- JavaScript -->
+    <script>
+        // Load Header
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            });
+
+        // Load Footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+
+        // Fetch product details from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const productName = urlParams.get("name");
+        const productPrice = urlParams.get("price");
+        const productDescription = urlParams.get("description");
+
+        const productImages = [];
+        const grindOptions = [];
+
+        // Extract images and grind options from URL parameters
+        urlParams.forEach((value, key) => {
+            if (key.startsWith("image")) {
+                productImages.push(value);
+            }
+            if (key.startsWith("grind")) {
+                grindOptions.push(value);
+            }
+        });
+
+        // Populate product details
+        document.getElementById("product-title").innerText = productName || "Product Name";
+        document.getElementById("product-price").innerText = productPrice || "$0.00";
+        document.getElementById("product-description").innerText = productDescription || "Product description goes here.";
+
+        const mainImage = document.getElementById("main-image");
+        if (productImages.length > 0) {
+            mainImage.src = productImages[0];
+        }
+
+        const thumbnailGrid = document.getElementById("thumbnail-grid");
+        productImages.forEach(image => {
+            const thumbnail = document.createElement("img");
+            thumbnail.src = image;
+            thumbnail.className = "thumbnail rounded-lg cursor-pointer";
+            thumbnail.addEventListener("click", () => {
+                mainImage.src = image;
+            });
+            thumbnailGrid.appendChild(thumbnail);
+        });
+
+        // Display grind options if available
+        if (grindOptions.length > 0) {
+            const grindSelect = document.getElementById("grind-select");
+            grindOptions.forEach(grind => {
+                const option = document.createElement("option");
+                option.value = grind;
+                option.innerText = grind;
+                grindSelect.appendChild(option);
+            });
+            document.getElementById("grind-options").classList.remove("hidden");
+        }
+
+        // Add to Cart Button
+        const addToCartBtn = document.getElementById("add-to-cart-btn");
+        addToCartBtn.addEventListener("click", function () {
+            const selectedGrind = document.getElementById("grind-select").value || "None";
+            alert(`${productName || "Product"} added to cart! Grind: ${selectedGrind}`);
+        });
+    </script>
+</body>
+</html>

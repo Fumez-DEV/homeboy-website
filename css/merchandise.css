@@ -1,0 +1,179 @@
+/* General Styling */
+body {
+    background-color: #f9fafb; /* Light background for better readability */
+    font-family: 'Inter', sans-serif; /* Clean and modern font for the page */
+    color: #1a202c; /* General text color for better readability */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Page Title */
+h1 {
+    font-size: 2.5rem;
+    color: #1a202c; /* Dark text for contrast */
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+/* Section Titles */
+h2 {
+    font-size: 1.8rem;
+    color: #2d3748; /* Medium dark text */
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #3490dc; /* Blue accent for section titles */
+    padding-left: 1rem;
+    font-weight: 600;
+}
+
+/* Product Grid */
+.product-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Product Card */
+.product-card {
+    position: relative;
+    background-color: #ffffff; /* White background for products */
+    border: 1px solid #e2e8f0; /* Light gray border */
+    border-radius: 10px; /* Smooth corners */
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.product-card:hover {
+    transform: translateY(-6px); /* Lift effect on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+}
+
+/* Product Image */
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+/* Sold-Out Overlay */
+.sold-out-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)); /* Smooth gradient for a modern look */
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem; /* Slightly larger font */
+    font-weight: 700;
+    text-transform: uppercase;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* Adds depth to the text */
+    letter-spacing: 1px; /* Makes text appear more defined */
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth animation for visibility */
+    z-index: 10; /* Ensures overlay stays on top of the product card */
+}
+
+.product-card.sold-out .sold-out-overlay {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1.05); /* Slight scale-up effect for better emphasis */
+}
+
+/* Product Image Dim Effect */
+.product-card.sold-out img {
+    filter: grayscale(100%) brightness(50%); /* Grayscale and dimmed effect for sold-out products */
+    transition: filter 0.3s ease-in-out; /* Smooth transition for dim effect */
+}
+
+.product-card.sold-out:hover img {
+    filter: grayscale(100%) brightness(60%); /* Slightly brighten on hover for interaction feel */
+}
+
+/* Product Info */
+.product-card .product-info {
+    padding: 1rem;
+    text-align: center;
+}
+
+.product-card .product-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #2d3748; /* Darker gray for better contrast */
+    margin-bottom: 0.5rem;
+}
+
+.product-card .product-price {
+    font-size: 1rem;
+    color: #4a5568; /* Medium gray for pricing */
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.product-card .product-description {
+    font-size: 0.9rem;
+    color: #718096; /* Light gray for descriptions */
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+/* Action Button */
+.product-card .product-button {
+    display: inline-block;
+    background-color: #3490dc; /* Primary blue button */
+    color: #ffffff; /* White text */
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.product-card .product-button:hover {
+    background-color: #2779bd; /* Darker blue on hover */
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .product-card img {
+        height: 150px;
+    }
+
+    .product-card .product-title {
+        font-size: 1rem;
+    }
+
+    .product-card .product-price {
+        font-size: 0.9rem;
+    }
+
+    .product-card .product-description {
+        font-size: 0.8rem;
+    }
+
+    .product-card .product-button {
+        font-size: 0.85rem;
+        padding: 0.5rem 1rem;
+    }
+}

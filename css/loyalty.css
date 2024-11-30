@@ -1,0 +1,119 @@
+/* Loyalty Program Styling */
+
+/* Benefits List */
+.benefits-list li {
+    font-size: 1rem;
+    line-height: 1.6;
+    border-left: 4px solid #3490dc; /* Blue left border */
+    padding-left: 1rem; /* Spacing between border and text */
+    margin-bottom: 1rem; /* Space between list items */
+    color: #4a5568; /* Medium gray color */
+}
+
+/* Steps Section */
+.steps .step-card {
+    padding: 1.5rem; /* Inner padding */
+    background-color: #ffffff; /* White background */
+    border: 1px solid #e2e8f0; /* Light gray border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth hover effects */
+    text-align: center; /* Center-align content */
+}
+
+.steps .step-card:hover {
+    transform: translateY(-5px); /* Lift slightly on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+/* Sign-Up Form */
+form input {
+    width: 100%; /* Full width for input fields */
+    padding: 0.75rem; /* Inner padding */
+    border: 1px solid #e2e8f0; /* Light gray border */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 1rem; /* Standard font size */
+    margin-bottom: 1rem; /* Space between input fields */
+    outline: none; /* Remove focus outline */
+}
+
+form input:focus {
+    border-color: #3490dc; /* Blue border on focus */
+    box-shadow: 0 0 4px rgba(52, 144, 220, 0.4); /* Subtle blue glow */
+}
+
+form button {
+    background-color: #3490dc; /* Blue background */
+    color: #ffffff; /* White text */
+    padding: 0.75rem 1.5rem; /* Inner padding */
+    font-weight: bold; /* Bold text */
+    text-transform: uppercase; /* Uppercase text */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.2s ease; /* Smooth hover effect */
+}
+
+form button:hover {
+    background-color: #2563eb; /* Darker blue on hover */
+}
+
+/* Section Titles */
+h1, h2 {
+    color: #1a202c; /* Dark gray */
+    margin-bottom: 1rem; /* Space below titles */
+}
+
+h1 {
+    font-size: 2.5rem; /* Large title font */
+    font-weight: bold; /* Bold text */
+    text-align: center; /* Centered */
+}
+
+h2 {
+    font-size: 1.8rem; /* Slightly smaller than h1 */
+    font-weight: 600; /* Semi-bold text */
+    text-align: center; /* Centered */
+}
+
+/* General Spacing */
+section {
+    margin-bottom: 2rem; /* Space below each section */
+    padding: 1rem; /* Inner padding */
+}
+
+/* Background Styling for Steps Section */
+.py-12.bg-gray-50 {
+    background-color: #f7fafc; /* Light gray background */
+    padding: 3rem 1rem; /* Larger padding for visual emphasis */
+}
+
+/* Centered Container */
+.container {
+    max-width: 900px; /* Maximum width of the container */
+    margin: 0 auto; /* Center the container */
+    padding: 1rem; /* Inner padding */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem; /* Smaller title on mobile */
+    }
+
+    h2 {
+        font-size: 1.5rem; /* Smaller subtitle on mobile */
+    }
+
+    form input, form button {
+        font-size: 0.9rem; /* Smaller input and button text */
+    }
+
+    .steps {
+        grid-template-columns: 1fr; /* Single-column layout */
+    }
+
+    .step-card {
+        margin-bottom: 1rem; /* Space between cards */
+    }
+}

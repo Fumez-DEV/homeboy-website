@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Homeboy Coffee Shop's exclusive merchandise. From hats and hoodies to our signature home blend coffee.">
+    <title>Merchandise - Homeboy Coffee Shop</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/merchandise.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon"> <!-- Add Favicon -->
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Dynamic Header -->
+    <div id="header"></div>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12">
+        <!-- Page Title -->
+        <h1 class="text-4xl font-bold text-center mb-8">Merchandise</h1>
+
+<!-- Hats Section -->
+<section id="hats" class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Hats</h2>
+    <div class="product-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+</section>
+
+        <!-- Hoodies Section -->
+        <section id="hoodies" class="mb-12">
+            <h2 class="text-2xl font-semibold mb-4">Hoodies</h2>
+            <div class="product-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+        </section>
+
+        <!-- Home Blend Coffee Section -->
+        <section id="home-blend" class="mb-12">
+            <h2 class="text-2xl font-semibold mb-4">Home Blend Coffee</h2>
+            <div class="product-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+        </section>
+    </main>
+
+    <!-- Dynamic Footer -->
+    <div id="footer"></div>
+
+    <!-- JavaScript for Dynamic Header and Footer -->
+    <script>
+        // Load Header
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+                // Highlight active page in the navigation
+                const currentPage = location.pathname.split('/').pop();
+                const navLinks = document.querySelectorAll('#header a');
+                navLinks.forEach(link => {
+                    if (link.getAttribute('href') === currentPage) {
+                        link.classList.add('text-blue-500', 'font-semibold');
+                    }
+                });
+            });
+
+        // Load Footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+    </script>
+
+    <!-- Merchandise Script -->
+    <script src="js/merchandise.js"></script>
+</body>
+</html>

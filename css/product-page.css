@@ -1,0 +1,116 @@
+/* General Styling */
+body {
+    background-color: #f9fafb;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Product Details */
+.product-details {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Product Images */
+.product-images img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.thumbnail-grid img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border 0.3s ease;
+}
+
+.thumbnail-grid img:hover {
+    border: 2px solid #3490dc;
+}
+
+/* Product Info */
+.product-info h1 {
+    color: #1a202c;
+}
+
+.product-info p {
+    line-height: 1.6;
+}
+
+/* Grind List Section */
+#grind-options {
+    margin-top: 1rem;
+}
+
+#grind-options h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+}
+
+#grind-options ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+}
+
+#grind-options ul li {
+    font-size: 1rem;
+    color: #4a5568;
+    margin-bottom: 0.5rem;
+}
+
+/* Select Dropdown */
+#grind-select {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #4a5568;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    margin-top: 1rem;
+    cursor: pointer;
+    background-color: #ffffff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#grind-select:focus {
+    border-color: #3490dc;
+    box-shadow: 0 0 0 3px rgba(52, 144, 220, 0.3);
+}
+
+/* Button */
+button {
+    background-color: #3490dc;
+    color: white;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2779bd;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .product-details {
+        flex-direction: column;
+    }
+
+    #grind-options ul li {
+        font-size: 0.9rem;
+    }
+
+    #grind-select {
+        font-size: 0.9rem;
+    }
+}
