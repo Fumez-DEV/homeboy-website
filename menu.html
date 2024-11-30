@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover the delicious menu at Homeboy Coffee Shop. Coffee, sandwiches, and more!">
+    <title>Menu - Homeboy Coffee Shop</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Dynamic Header -->
+    <div id="header"></div>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12">
+        <!-- Page Title -->
+        <h1 class="text-4xl font-bold text-center mb-8">Our Menu</h1>
+
+        <!-- Coffee Section -->
+        <section class="menu-section mb-12">
+            <h2 class="text-2xl font-semibold mb-6">Coffee</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="menu-item">
+                    <img src="images/latte.jpg" alt="Latte" class="menu-image">
+                    <h3 class="text-lg font-bold mt-2">Latte</h3>
+                    <p class="text-gray-600">Rich and creamy perfection.</p>
+                    <p class="text-gray-800 font-semibold mt-1">$4.50</p>
+                </div>
+                <div class="menu-item">
+                    <img src="images/espresso.png" alt="Espresso" class="menu-image">
+                    <h3 class="text-lg font-bold mt-2">Espresso</h3>
+                    <p class="text-gray-600">Bold and flavorful shot.</p>
+                    <p class="text-gray-800 font-semibold mt-1">$3.00</p>
+                </div>
+                <div class="menu-item">
+                    <img src="images/cappuccino.jpg" alt="Cappuccino" class="menu-image">
+                    <h3 class="text-lg font-bold mt-2">Cappuccino</h3>
+                    <p class="text-gray-600">Perfectly frothy and satisfying.</p>
+                    <p class="text-gray-800 font-semibold mt-1">$4.00</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sandwiches Section -->
+        <section class="menu-section mb-12">
+            <h2 class="text-2xl font-semibold mb-6">Sandwiches</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="menu-item">
+                    <img src="images/focaccia.jpg" alt="Focaccia Sandwich" class="menu-image">
+                    <h3 class="text-lg font-bold mt-2">Focaccia Sandwich</h3>
+                    <p class="text-gray-600">Freshly baked and full of flavor.</p>
+                    <p class="text-gray-800 font-semibold mt-1">$7.00</p>
+                </div>
+                <div class="menu-item">
+                    <img src="images/sourdough.jpg" alt="Sourdough Sandwich" class="menu-image">
+                    <h3 class="text-lg font-bold mt-2">Sourdough Sandwich</h3>
+                    <p class="text-gray-600">Hearty and wholesome.</p>
+                    <p class="text-gray-800 font-semibold mt-1">$8.00</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pastries Section -->
+        <section class="menu-section">
+            <h2 class="text-2xl font-semibold mb-6">Pastries</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="menu-item">
+                    <img src="images/scone.jpg" alt="Scone" class="menu-image">
+                    <h3 class="text-lg font-bold mt-2">Fresh Scone</h3>
+                    <p class="text-gray-600">Served with jam and cream.</p>
+                    <p class="text-gray-800 font-semibold mt-1">$3.50</p>
+                </div>
+                <div class="menu-item">
+                    <img src="images/croissant.jpg" alt="Croissant" class="menu-image">
+                    <h3 class="text-lg font-bold mt-2">Butter Croissant</h3>
+                    <p class="text-gray-600">Flaky and buttery goodness.</p>
+                    <p class="text-gray-800 font-semibold mt-1">$3.00</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Dynamic Footer -->
+    <div id="footer"></div>
+
+    <!-- JavaScript for Dynamic Header and Footer -->
+    <script>
+        // Load Header
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            });
+
+        // Load Footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+    </script>
+</body>
+</html>

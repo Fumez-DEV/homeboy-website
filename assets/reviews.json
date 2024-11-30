@@ -1,0 +1,28 @@
+{
+    "reviews": [
+        {
+            "name": "Emily Johnson",
+            "text": "Homeboy Coffee has the best lattes I’ve ever tasted! The ambiance is fantastic, and the staff are super friendly."
+        },
+        {
+            "name": "Michael Brown",
+            "text": "I can’t start my day without a scone and coffee from Homeboy. A perfect way to kick off the morning!"
+        },
+        {
+            "name": "Sophia Lee",
+            "text": "Their commitment to ethical sourcing is inspiring. I love supporting a business that cares about the environment."
+        },
+        {
+            "name": "James Smith",
+            "text": "The coffee is always fresh, and the vibes are amazing. I come here to work and relax. Highly recommended!"
+        },
+        {
+            "name": "Olivia Wilson",
+            "text": "The sandwiches are to die for, and the coffee is just perfect. A great place to catch up with friends."
+        },
+        {
+            "name": "Ethan Martinez",
+            "text": "A hidden gem! The decor is cozy, and the coffee tastes incredible. Can’t wait to visit again!"
+        }
+    ]
+}

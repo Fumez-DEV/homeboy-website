@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover Homeboy Coffee Shop in Adelaide, serving ethically sourced coffee and fresh bakery treats.">
     <title>Homeboy Coffee Shop</title>
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon"> <!-- Add Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-100 font-sans">
@@ -12,17 +13,115 @@
     <div id="header"></div>
 
     <!-- Main Content -->
-    <main class="p-6">
-        <section class="text-center my-8">
-            <h2 class="text-3xl font-semibold">Good Vibes, Great Coffee</h2>
-            <p class="text-lg mt-2 text-gray-600">
-                Bringing delicious coffee and community vibes to Adelaide.
-            </p>
-            <a href="menu.html" class="mt-4 inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">
-                Explore Our Menu
-            </a>
+    <main>
+        <!-- Hero Section -->
+        <section class="relative bg-cover bg-center h-screen" style="background-image: url('images/homeboy-hero.jpg');">
+            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                <div class="text-center text-white px-6">
+                    <h1 class="text-5xl font-bold mb-4">Brewing Happiness in Adelaide</h1>
+                    <p class="text-xl mb-6">Serving ethically sourced coffee and local bakery treats.</p>
+                    <div class="space-x-4">
+                        <a href="menu.html" class="bg-blue-500 text-white px-6 py-3 rounded shadow hover:bg-blue-700">Explore Our Menu</a>
+                        <a href="contact.html" class="bg-white text-blue-500 px-6 py-3 rounded shadow hover:bg-gray-200">Visit Us Today</a>
+                        <a href="order.html" class="bg-green-500 text-white px-6 py-3 rounded shadow hover:bg-green-700">Order Online</a>
+                    </div>
+                </div>
+            </div>
         </section>
-    </main>
+
+        <!-- Features Section -->
+        <section class="py-12 bg-gray-50">
+            <div class="container mx-auto text-center px-6">
+                <h2 class="text-3xl font-semibold mb-8 text-center">
+                    Why Choose Homeboy?
+                </h2>                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
+                    <!-- Ethically Sourced -->
+                    <div class="p-6 border rounded-lg shadow hover:shadow-lg hover:bg-gray-200 transition duration-300">
+                        <img src="images/ethically-sourced.png" alt="Ethically Sourced" class="mx-auto mb-4 w-20 h-20">
+                        <h3 class="text-xl font-bold mb-2">Ethically Sourced</h3>
+                        <p>We partner with farmers who care for the planet.</p>
+                    </div>
+                    <!-- Local Bakery -->
+                    <div class="p-6 border rounded-lg shadow hover:shadow-lg hover:bg-gray-200 transition duration-300">
+                        <img src="images/local-bakery.png" alt="Local Bakery" class="mx-auto mb-4 w-20 h-20">
+                        <h3 class="text-xl font-bold mb-2">Local Bakery</h3>
+                        <p>Freshly baked treats daily from local partners.</p>
+                    </div>
+                    <!-- Fast Takeaway -->
+                    <div class="p-6 border rounded-lg shadow hover:shadow-lg hover:bg-gray-200 transition duration-300">
+                        <img src="images/takeaway.png" alt="Fast Takeaway" class="mx-auto mb-4 w-20 h-20">
+                        <h3 class="text-xl font-bold mb-2">Fast Takeaway</h3>
+                        <p>Convenient options for coffee on the go.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu Highlights Section -->
+        <section class="py-12 bg-white">
+            <div class="container mx-auto text-center px-6">
+                <h2 class="text-3xl font-semibold mb-8">Customer Favorites</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                    <div class="p-6 border rounded-lg shadow hover:shadow-lg hover:bg-gray-100 transition duration-300">
+                        <img src="images/latte.jpg" alt="Latte" class="rounded w-40 h-40 mx-auto mb-4 object-cover">
+                        <h3 class="text-xl font-bold mb-2">Signature Latte</h3>
+                        <p>Rich and creamy perfection.</p>
+                    </div>
+                    <div class="p-6 border rounded-lg shadow hover:shadow-lg hover:bg-gray-100 transition duration-300">
+                        <img src="images/scone.jpg" alt="Fresh Scone" class="rounded w-40 h-40 mx-auto mb-4 object-cover">
+                        <h3 class="text-xl font-bold mb-2">Fresh Scone</h3>
+                        <p>Paired perfectly with jam and cream.</p>
+                    </div>
+                    <div class="p-6 border rounded-lg shadow hover:shadow-lg hover:bg-gray-100 transition duration-300">
+                        <img src="images/espresso.png" alt="Espresso" class="rounded w-40 h-40 mx-auto mb-4 object-cover">
+                        <h3 class="text-xl font-bold mb-2">Espresso Shot</h3>
+                        <p>Bold flavors for true coffee lovers.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!-- Visit Us Section -->
+<section class="py-12 bg-gray-50">
+    <div class="container mx-auto text-center px-6">
+        <!-- Section Title -->
+        <h2 class="text-3xl font-semibold mb-8">Visit Us</h2>
+        
+        <!-- Address and Map -->
+        <div class="flex flex-col md:flex-row items-center justify-center md:space-x-8">
+            <!-- Address Block -->
+            <div class="text-left md:text-right mb-6 md:mb-0 md:max-w-sm">
+                <h3 class="text-xl font-bold mb-4">Our Location</h3>
+                <p class="text-gray-600">
+                    266 North Terrace<br>
+                    Adelaide, South Australia 5000<br>
+                    <a href="https://maps.app.goo.gl/9YUpcLqB7G52WVcy8" target="_blank" 
+                       class="text-blue-500 hover:underline">View on Google Maps</a>
+                </p>
+                <p class="mt-4">
+                    <span class="font-semibold">Hours:</span><br>
+                    Mon-Fri: 7:00 AM - 6:00 PM<br>
+                    Sat-Sun: 8:00 AM - 4:00 PM
+                </p>
+                <p class="mt-4">
+                    <span class="font-semibold">Phone:</span><br>
+                    <a href="tel:+61881234567" class="text-blue-500 hover:underline">+61 8 8123 4567</a>
+                </p>
+            </div>
+            
+            <!-- Google Map -->
+            <div class="rounded-lg shadow-lg overflow-hidden md:max-w-lg" style="max-width: 500px; width: 100%; height: 400px;">
+                <iframe 
+                    style="width: 100%; height: 100%; border: 0;" 
+                    frameborder="0" 
+                    src="https://www.google.com/maps/embed/v1/place?q=266+North+Terrace+Adelaide,+South+Australia&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </div>
+</section>
+</main>
 
     <!-- Footer -->
     <div id="footer"></div>

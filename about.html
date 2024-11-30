@@ -15,34 +15,88 @@
 
     <!-- Main Content -->
     <main class="container mx-auto px-6 py-12">
-        <!-- Page Title -->
-        <h1 class="text-4xl font-bold text-center mb-8">About Us</h1>
-
-        <!-- Section: Homeboy Moves to the City -->
+        <!-- Hero Image Section -->
         <section class="mb-12">
-            <h2 class="text-2xl font-semibold mb-4">Homeboy Moves to the City!</h2>
+            <img src="images/about-image.avif" alt="About Homeboy Coffee Shop" class="w-full h-64 object-cover rounded-lg shadow-md">
+        </section>
+    
+<!-- Section: Homeboy Moves to the City -->
+<section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Homeboy Moves to the City!</h2>
+    <div class="flex flex-col md:flex-row items-center md:space-x-6">
+        <!-- Image -->
+        <img src="images/homeboy-cbd.png" alt="Homeboy Moves to the City" class="w-full md:w-1/2 rounded-lg shadow-md mb-4 md:mb-0">
+        <!-- Text -->
+        <div class="text-gray-700">
             <p class="mb-4">
                 After an incredible 12 months in Hahndorf, <strong>Homeboy</strong> is stepping into the heart of Adelaide's bustling CBD! Nestled under the Yugo student accommodation building, right across from Adelaide University, Homeboy is ready to bring its signature good vibes, great coffee, and irresistible focaccia to a brand-new crowd.
             </p>
             <p>
                 With a vision to create a close-knit community, Tom, the driving force behind Homeboy, is excited to foster connections over takeaway coffees and delicious sandos throughout the week. Thanks to <strong>Renew Adelaide</strong>, this once-empty space is transforming into the coffee shop of his dreams.
             </p>
-        </section>
+        </div>
+    </div>
+</section>
 
-        <!-- Section: Season 1 - Thiele’s Shop -->
-        <section class="mb-12">
-            <h2 class="text-2xl font-semibold mb-4">Season 1 - Thiele’s Shop</h2>
+<section class="py-12 bg-gray-50">
+    <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-semibold mb-4">Renew Adelaide</h2>
+        <p class="text-gray-600 mb-6">How Homeboy found his spot!</p>
+        <div class="video-container mx-auto">
+            <video
+                src="images/tom-finds.mp4"
+                class="video-responsive rounded-lg shadow-lg"
+                muted
+                loop
+                playsinline
+            ></video>
+        </div>
+    </div>
+</section>
+
+
+<script>
+    const video = document.querySelector('.video-container video');
+
+    video.addEventListener('mouseenter', () => {
+        video.muted = false;
+        video.play();
+    });
+
+    video.addEventListener('mouseleave', () => {
+        video.pause();
+        video.muted = true;
+    });
+</script>
+
+
+<!-- Section: Season 1 - Thiele’s Shop -->
+<section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Season 1 - Thiele’s Shop</h2>
+    <div class="flex flex-col md:flex-row-reverse items-center md:space-x-6">
+        <!-- Image -->
+        <img src="images/thieles-shop.png" alt="Season 1 - Thiele’s Shop" class="w-full md:w-1/2 rounded-lg shadow-md mb-4 md:mb-0">
+        <!-- Text -->
+        <div class="text-gray-700">
             <p class="mb-4">
                 Ever wondered how someone can start a café at just 18 years old? It’s a great question, and the answer lies in an incredible opportunity. Season 1 of Homeboy wouldn’t have been possible without the collaboration of <strong>Thiele’s Shop</strong> and <strong>The PaintBox</strong>, two creative venues that empower young entrepreneurs and artists to test their ideas in a real, brick-and-mortar setting.
             </p>
             <p>
                 Thiele’s Shop operates as a dynamic hub, hosting pop-ups that keep the space fresh and exciting. This unique model allowed Tom to focus entirely on what mattered—crafting amazing coffee, elevating customer experiences, and sharing the journey through media content.
             </p>
-        </section>
+        </div>
+    </div>
+</section>
 
-        <!-- Section: Meet Tom -->
-        <section class="mb-12">
-            <h2 class="text-2xl font-semibold mb-4">Meet Tom</h2>
+
+<!-- Section: Meet Tom -->
+<section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Meet Tom</h2>
+    <div class="flex flex-col md:flex-row items-center md:space-x-6">
+        <!-- Image -->
+        <img src="images/tom-stand.png" alt="Meet Tom" class="w-full md:w-1/2 rounded-lg shadow-md mb-4 md:mb-0">
+        <!-- Text -->
+        <div class="text-gray-700">
             <p class="mb-4">
                 Hi, I’m Tom—the man behind Homeboy! You’ll usually find me at the shop, working hard, brewing coffee, and chatting with our amazing customers.
             </p>
@@ -52,7 +106,9 @@
             <p>
                 Come by the shop or drop me a message on Instagram. Let’s make great things happen together!
             </p>
-        </section>
+        </div>
+    </div>
+</section>
 
         <!-- Section: Why Choose Homeboy -->
         <section class="mb-12">

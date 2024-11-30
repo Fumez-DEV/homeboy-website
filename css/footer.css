@@ -25,6 +25,13 @@ footer a:hover {
     text-decoration: underline; /* Underline on hover */
 }
 
+/* Payment Methods Image */
+footer img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px; /* Rounded corners */
+}
+
 /* Responsive Footer */
 @media (max-width: 768px) {
     footer {
@@ -33,5 +40,9 @@ footer a:hover {
 
     footer p {
         font-size: 0.75rem; /* Smaller font for mobile */
+    }
+    
+    footer img {
+        width: 100%; /* Adjust image size for smaller screens */
     }
 }

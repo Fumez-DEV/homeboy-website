@@ -1,0 +1,46 @@
+/* Review Card */
+.reviews .review-card {
+    background-color: #ffffff; /* White background */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 1.5rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.reviews .review-card:hover {
+    transform: translateY(-5px); /* Slight hover lift */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Reviewer Name */
+.reviews .review-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1a202c; /* Dark gray */
+    margin-bottom: 0.5rem;
+}
+
+/* Review Text */
+.reviews .review-card p {
+    font-size: 1rem;
+    color: #4a5568; /* Medium gray */
+    line-height: 1.6;
+}
+
+/* Load More Button */
+#load-more {
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+#load-more:hover {
+    background-color: #2563eb; /* Darker blue */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .reviews {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+    }
+}
